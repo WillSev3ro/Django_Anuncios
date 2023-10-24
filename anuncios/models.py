@@ -5,11 +5,11 @@ class Categoria(models.Model):
     def __str__(self):
         return self.titulo
 
-#     class Meta:
-#          ordering = ['titulo']
+    class Meta:
+         ordering = ['titulo']
 
 class Anuncio(models.Model):
-    titulo = models.CharField(max_length=30)
+    titulo = models.CharField(max_length=50)
     descricao = models.TextField(null=True, blank=True)
     preco = models.DecimalField(max_digits=11, decimal_places=2)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
@@ -20,5 +20,5 @@ class Anuncio(models.Model):
     def __str__(self):
             return self.titulo
     
-#     class Meta:
-#          ordering = ['-id']
+    class Meta:
+         ordering = ['-id']
